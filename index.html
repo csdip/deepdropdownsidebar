@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Sidebar Menu</title>
+    <link rel="stylesheet" href="../dist/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+</head>
+<body>
+    <i class="fa-solid fa-bars"></i>
+    <div class="navbar__wrapper">
+        <nav class="navbar">
+            <div class="header">
+                <a href="#" class="logo">
+                    <i class="fa-brands fa-css3-alt"></i>
+                </a>
+                <i class="fa-solid fa-xmark"></i> 
+            </div>
+            <ul class="menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Site</a></li>
+                <li class="dropdown">
+                    <a href="#"><span>Features</span></a>
+                    <i class="fa-solid fa-angle-down"></i>
+                    <ul class="submenu">
+                        <li><a href="#">Site map</a></li>
+                        <li class="dropdown">
+                            <a href="#"><span>Multi Dropdown</span></a>
+                            <i class="fa-solid fa-angle-down"></i>
+                            <ul class="submenu submenu-right">
+                                <li><a href="#"><span>Multi Drop down 1</span></a></li>
+                                <li><a href="#"><span>Multi Drop down 2</span></a></li>
+                                <li><a href="#"><span>Multi Drop down 3</span></a></li>
+                                <li><a href="#"><span>Multi Drop down 4</span></a></li>
+                                <li><a href="#"><span>Multi Drop down 5</span></a></li>
+                            </ul>
+                            <li>
+                        <li><a href="#"><span>YouTube</span></a></li>
+                        <li class="dropdown"><a href="#"><span>Sub Links</span></a>
+                            <i class="fa-solid fa-angle-down"></i>
+                            <ul class="submenu submenu-right">
+                                <li><a href="#"><span>sub link 1</span></a></li>
+                                <li><a href="#"><span>sub link 2</span></a></li>
+                                <li><a href="#"><span>sub link 3</span></a></li>
+                                <li class="dropdown"><a href="#"><span>sub link 4</span></a>
+                                    <i class="fa-solid fa-angle-down"></i>
+                                    <ul class="submenu submenu-right">
+                                        <li><a href="#"><span>deep sub link 1</span></a></li>
+                                        <li><a href="#"><span>deep sub link 2</span></a></li>
+                                        <li><a href="#"><span>deep sub link 3</span></a></li>
+                                        <li><a href="#"><span>deep sub link 4</span></a></li>
+                                        <li><a href="#"><span>deep sub link 5</span></a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#"><span>sub link 5</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#">Blog</a></li>
+                <li class="dropdown">
+                    <a href="#"><span>Drop Down</span></a>
+                    <i class="fa-solid fa-angle-down"></i>
+                    <ul class="submenu">
+                        <li><a href="#">Drop Down 1</a></li>
+                        <li><a href="#"><span>Drop Down 2</span></a></li>
+                        <li class="dropdown"><a href="#"><span>Deep Drop Down</span></a>
+                            <i class="fa-solid fa-angle-down"></i>
+                            <ul class="submenu submenu-left">
+                                <li><a href="#"><span> Deep Drop down 1</span></a></li>
+                                <li><a href="#"><span> Deep Drop down 2</span></a></li>
+                                <li><a href="#"><span> Deep Drop down 3</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Sign Up</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <script>
+        let menu = document.querySelector('.menu')
+        let navWrapper = document.querySelector('.navbar__wrapper')
+        let navBtn = document.querySelector('.fa-bars')
+        let navBtnClose = document.querySelector('.fa-xmark')
+        menu.querySelectorAll('.dropdown > i').forEach((arrow)=>{
+            arrow.addEventListener('click',()=>{
+                arrow.closest('.dropdown').classList.toggle('active')
+            })
+        })
+        navBtn.addEventListener('click', ()=>{
+            navWrapper.classList.add('active')
+        })
+        navBtnClose.addEventListener('click', ()=>{
+            navWrapper.classList.remove('active')
+        })
+    </script>
+</body>
+</html>
